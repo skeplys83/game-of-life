@@ -15,12 +15,7 @@ jobs:
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.9.0
       with:
-        ssh-private-key: ${{ b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-                             QyNTUxOQAAACCeKbFR1BTdRAhFppmdpqyk7n6f75qSz/GJrbLafYyeYQAAAJBdgC2GXYAt
-                             hgAAAAtzc2gtZWQyNTUxOQAAACCeKbFR1BTdRAhFppmdpqyk7n6f75qSz/GJrbLafYyeYQ
-                             AAAEA0v7UhB1DU0rRFySnG76ECRySecguRQVPPO7m3VN7Spp4psVHUFN1ECEWmmZ2mrKTu
-                             fp/vmpLP8Ymtstp9jJ5hAAAADXVzZXJAQkJHTkIwMDQ=
-                          }}
+        ssh-private-key: ${{ secrets.WSL_SSH_PRIVATE_KEY }}
                           
     - name: Deploy via SSH
       run: |
