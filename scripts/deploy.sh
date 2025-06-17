@@ -3,4 +3,3 @@ cd /home/opc/game-of-life
 git pull
 npm install
 npm run build
-exit
