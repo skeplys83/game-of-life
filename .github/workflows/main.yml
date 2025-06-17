@@ -1,8 +1,5 @@
 name: Oracle VPS deployment
 
-on:
-  push:
-    branches: [main]
 
 jobs:
   deploy:
