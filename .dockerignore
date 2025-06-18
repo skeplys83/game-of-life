@@ -1,0 +1,14 @@
+.git
+.github
+.vite
+.vscode
+dist
+node_modules
+public
+scripts
+
+.dockerignore
+.env
+.gitignore
+dockerfile
+LICENCE
