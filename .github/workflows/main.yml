@@ -19,7 +19,7 @@ jobs:
 
     - name: SSH and pull latest changes
       run: |
-        ssh -o StrictHostKeyChecking=no user@your-vps-ip << 'EOF'
+        ssh -o StrictHostKeyChecking=no opc@132.226.201.132 << 'EOF'
           cd ~/game-of-life
           git pull origin main
         EOF
