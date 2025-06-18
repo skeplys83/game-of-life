@@ -1,24 +1,25 @@
-name: Oracle VPS deployment
+name: Deploy to VPS
 
+on:
+  push:
+    branches: [main]
 
 jobs:
   deploy:
-    runs-on: oracle-server
-    
+    runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.9.0
       with:
         ssh-private-key: ${{ secrets.WSL_SSH_PRIVATE_KEY }}
-                          
-    - name: Deploy via SSH
+
+    - name: SSH and pull latest changes
       run: |
-        ssh -o StrictHostKeyChecking=no opc@132.226.201.132 << 'EOF'
-          cd /home/opc/game-of-life
-          git pull
-          npm install
-          npm run build
+        ssh -o StrictHostKeyChecking=no user@your-vps-ip << 'EOF'
+          cd ~/game-of-life
+          git pull origin main
         EOF
