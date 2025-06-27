@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "globals": "^16.2.0",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
     "tailwindcss": "^3.4.17",
     "vite": "^6.3.5"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.21"
+    "autoprefixer": "^10.4.21",
+    "is-odd": "^3.0.1"
   }
 }
