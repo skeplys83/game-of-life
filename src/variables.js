@@ -1,5 +1,5 @@
-import { slider,canvas } from './dom'
-import { create2DArray } from './functions/coreFunctions'
+import { slider,canvas } from './domElements'
+import { create2DArray } from './coreFunctions'
 
 export let updateInterval = (1050 - slider.value * 1000)
 

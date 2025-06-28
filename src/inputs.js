@@ -1,7 +1,7 @@
 // @ts-check
-import { glider, glidergun, grid,gridSize,hwss,oldField,pentaDecathlon,pulsar,setSliderValue,setUpdateInterval } from "../state";
-import { canvas,slider,pause,step,reset,pattern1,pattern2,pattern3 } from "../dom";
-import { drawGrid, setPattern, updateGrid } from "../functions/coreFunctions";
+import { glider, glidergun, grid,gridSize,oldField,pulsar,setSliderValue,setUpdateInterval } from "./variables";
+import { canvas,slider,pause,step,reset,pattern1,pattern2,pattern3 } from "./domElements";
+import { drawGrid, setPattern, updateGrid } from "./coreFunctions";
 
 let isDragging = false
 

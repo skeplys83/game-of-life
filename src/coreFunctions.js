@@ -1,5 +1,5 @@
-import { tmpGrid,grid,gridSize,updateInterval,pixelSize } from "../state";
-import { ctx,canvas,pause } from "../dom";
+import { tmpGrid,grid,gridSize,updateInterval,pixelSize } from "./variables";
+import { ctx,canvas,pause } from "./domElements";
 
 export const create2DArray = (rows, cols, initialValue = 0) => {
     return Array.from({ length: rows }, () =>

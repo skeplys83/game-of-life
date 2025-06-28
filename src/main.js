@@ -1,11 +1,6 @@
-import { setPattern,runGameLoop,drawGrid } from "./functions/coreFunctions"
-import { initGrids } from "./state"
+import { runGameLoop,drawGrid } from "./coreFunctions"
+import { initGrids } from "./variables"
 
 initGrids()
-// setPattern([
-//   [0, 1, 0],
-//   [1, 1, 0],
-//   [0, 1, 1],
-// ])
 runGameLoop()
 drawGrid() //called in runGameLoop as well, but needs to be called once to draw the grid.
