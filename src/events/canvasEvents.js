@@ -1,5 +1,5 @@
 // @ts-check
-import { grid,oldField,pixelSize,setSliderValue,setUpdateInterval,updateInterval } from "../state";
+import { grid,gridSize,oldField,pixelSize,setSliderValue,setUpdateInterval,updateInterval } from "../state";
 import { canvas,slider,pause,step,reset } from "../dom";
 import { drawGrid, updateGrid } from "../functions/coreFunctions";
 
@@ -10,8 +10,8 @@ canvas.addEventListener('mousedown', (e) => {
 
     let bounds = canvas.getBoundingClientRect()
 
-    let x = Math.floor((e.clientX - bounds.left) / pixelSize)
-    let y = Math.floor((e.clientY - bounds.top) / pixelSize)
+    let x = Math.floor((e.clientX - bounds.left) / (bounds.width / gridSize))
+    let y = Math.floor((e.clientY - bounds.top) / (bounds.height / gridSize))
     grid[x][y] = grid[x][y] ? 0 : 1
     
     drawGrid()
@@ -22,8 +22,8 @@ canvas.addEventListener('mousemove', (e) => {
 
     let bounds = canvas.getBoundingClientRect()
 
-    let x = Math.floor((e.clientX - bounds.left) / pixelSize)
-    let y = Math.floor((e.clientY - bounds.top) / pixelSize)
+    let x = Math.floor((e.clientX - bounds.left) / (bounds.width / gridSize))
+    let y = Math.floor((e.clientY - bounds.top) / (bounds.height / gridSize))
 
     if(oldField.x === x && oldField.y === y)return
     oldField.x = x

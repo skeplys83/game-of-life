@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '480px',
+        'short': { 'raw': '(max-height: 600px)' },
+      }
+    },
   },
   plugins: [],
 }
