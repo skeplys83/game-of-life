@@ -63,12 +63,17 @@ export const runGameLoop = () => {
     setTimeout(runGameLoop, updateInterval)
 }
 
-export const setPattern = (array) => {
-    //if(!Array.isArray(array))return
+export const setPattern = (array, posX = 0, posY = 0) => {
+  if (!Array.isArray(array)) return;
+  const rows = array.length;
+  const cols = array[0]?.length || 0;
 
-    grid[Math.floor(gridSize/2)][Math.floor(gridSize/2)] = 1
-    grid[Math.floor(gridSize/2)][Math.floor(gridSize/2) + 1] = 1
-    grid[Math.floor(gridSize/2)][Math.floor(gridSize/2) - 1] = 1
-    grid[Math.floor(gridSize/2) - 1][Math.floor(gridSize/2)] = 1
-    grid[Math.floor(gridSize/2) + 1][Math.floor(gridSize/2) + 1] = 1
-}
+  if (rows === 0 || cols === 0) return;
+  if (posY + rows > gridSize || posX + cols > gridSize) return;
+
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      grid[posY + x][posX + y] = array[y][x];
+    }
+  }
+};

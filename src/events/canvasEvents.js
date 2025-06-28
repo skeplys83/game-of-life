@@ -1,7 +1,7 @@
 // @ts-check
-import { grid,gridSize,oldField,pixelSize,setSliderValue,setUpdateInterval,updateInterval } from "../state";
-import { canvas,slider,pause,step,reset } from "../dom";
-import { drawGrid, updateGrid } from "../functions/coreFunctions";
+import { glider, glidergun, grid,gridSize,hwss,oldField,pentaDecathlon,pulsar,setSliderValue,setUpdateInterval } from "../state";
+import { canvas,slider,pause,step,reset,pattern1,pattern2,pattern3 } from "../dom";
+import { drawGrid, setPattern, updateGrid } from "../functions/coreFunctions";
 
 let isDragging = false
 
@@ -66,5 +66,25 @@ reset.addEventListener('click', e => {
     setSliderValue(1)
     setUpdateInterval(1050 - slider.value * 1000)
 
+    drawGrid()
+})
+
+pattern1.addEventListener('click', () => {
+    reset.click()
+    setPattern(glider, Math.floor(gridSize/2), Math.floor(gridSize/2))
+    drawGrid()
+})
+
+pattern2.addEventListener('click', () => {
+    reset.click()
+    setPattern(pulsar, Math.floor(gridSize/2 - 8), Math.floor(gridSize/2 - 7))
+    slider.value = 0.9
+    setUpdateInterval((1050 - slider.value * 1000))
+    drawGrid()
+})
+
+pattern3.addEventListener('click', () => {
+    reset.click()
+    setPattern(glidergun, Math.floor(gridSize/2 - 25), Math.floor(gridSize/2 - 6))
     drawGrid()
 })
