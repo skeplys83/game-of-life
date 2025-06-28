@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        'xs': '480px',
-        'short': { 'raw': '(max-height: 600px)' },
+        'xsm': '30rem',
+        'sh': { 'raw': '(max-height: 40rem)' },
       }
     },
   },
