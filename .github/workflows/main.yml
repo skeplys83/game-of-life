@@ -18,5 +18,6 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no opc@132.226.201.132 << 'EOF'
           cd ~/game-of-life
+          git reset --hard
           git pull origin main
         EOF
