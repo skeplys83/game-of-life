@@ -5,38 +5,40 @@ import { drawGrid, updateGrid } from "../functions/coreFunctions";
 
 let isDragging = false
 
-canvas.addEventListener('mousedown', (e) => {
-    isDragging = true
+for (let index = 0; index < 2; index++) {
+    canvas.addEventListener(index == 0 ? 'mousedown' : 'touchstart', (e) => {
+        isDragging = true
 
-    let bounds = canvas.getBoundingClientRect()
+        let bounds = canvas.getBoundingClientRect()
 
-    let x = Math.floor((e.clientX - bounds.left) / (bounds.width / gridSize))
-    let y = Math.floor((e.clientY - bounds.top) / (bounds.height / gridSize))
-    grid[x][y] = grid[x][y] ? 0 : 1
-    
-    drawGrid()
-});
+        let x = Math.floor((e.clientX - bounds.left) / (bounds.width / gridSize))
+        let y = Math.floor((e.clientY - bounds.top) / (bounds.height / gridSize))
+        grid[x][y] = grid[x][y] ? 0 : 1
+        
+        drawGrid()
+    });
 
-canvas.addEventListener('mousemove', (e) => {
-    if (!isDragging)return
+    canvas.addEventListener(index == 0 ? 'mousemove' : 'touchmove', (e) => {
+        if (!isDragging)return
 
-    let bounds = canvas.getBoundingClientRect()
+        let bounds = canvas.getBoundingClientRect()
 
-    let x = Math.floor((e.clientX - bounds.left) / (bounds.width / gridSize))
-    let y = Math.floor((e.clientY - bounds.top) / (bounds.height / gridSize))
+        let x = Math.floor((e.clientX - bounds.left) / (bounds.width / gridSize))
+        let y = Math.floor((e.clientY - bounds.top) / (bounds.height / gridSize))
 
-    if(oldField.x === x && oldField.y === y)return
-    oldField.x = x
-    oldField.y = y
+        if(oldField.x === x && oldField.y === y)return
+        oldField.x = x
+        oldField.y = y
 
-    grid[x][y] = 1
+        grid[x][y] = 1
 
-    drawGrid()
-});
+        drawGrid()
+    });
 
-document.addEventListener('mouseup', (e) => {
-    isDragging = false
-});
+    document.addEventListener(index == 0 ? 'mouseup' : 'touched', (e) => {
+        isDragging = false
+    });
+}
 
 slider.addEventListener('input', e => {
     setUpdateInterval(1050 - e.target.value * 1000)
