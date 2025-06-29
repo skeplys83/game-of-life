@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite';
 import fs from 'fs'
-import path from 'path'
 
 export default defineConfig({
     server: {
         https: {
-            key: fs.readFileSync(path.resolve(__dirname, '~/ssl-certs/key.pem')),
-            cert: fs.readFileSync(path.resolve(__dirname, '~/ssl-certs/cert.pem'))
+            key: fs.readFileSync('/ssl-certs/key.pem'),
+            cert: fs.readFileSync('/ssl-certs/cert.pem')
         },
         allowedHosts: [
             'martinhustoles.com', // Your production domain
