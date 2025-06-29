@@ -5,8 +5,8 @@ import path from 'path'
 export default defineConfig({
     server: {
         https: {
-            key: fs.readFileSync(path.resolve(__dirname, '/etc/letsencrypt/live/martinhustoles.com/privkey.pem')),
-            cert: fs.readFileSync(path.resolve(__dirname, '/etc/letsencrypt/live/martinhustoles.com/fullchain.pem'))
+            key: fs.readFileSync(path.resolve(__dirname, '~/ssl-certs/key.pem')),
+            cert: fs.readFileSync(path.resolve(__dirname, '~/ssl-certs/cert.pem'))
         },
         allowedHosts: [
             'martinhustoles.com', // Your production domain
