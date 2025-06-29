@@ -85,6 +85,6 @@ pattern2.addEventListener('click', () => {
 
 pattern3.addEventListener('click', () => {
     reset.click()
-    setPattern(glidergun, Math.floor(gridSize/2 - 25), Math.floor(gridSize/2 - 6))
+setPattern(glidergun, Math.floor(gridSize/2 - 6), Math.floor(gridSize/2 - 10))
     drawGrid()
 })
